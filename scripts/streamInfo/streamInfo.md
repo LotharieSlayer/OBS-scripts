@@ -16,3 +16,6 @@ https://github.com/psf/requests/releases/tag/v2.27.1
 - Update Interval (optionnal, by default 20s)
 
 If you have problem running this python script, please make sure you carefully follow the instructions from the <a href="https://github.com/LotharieSlayer/OBS-scripts">README</a> file at the root of this repository.
+
+### Why is it useful for me ?
+To make a "Up Next" scene that I can integrate into my Pause scene.
