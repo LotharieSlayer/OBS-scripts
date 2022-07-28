@@ -14,7 +14,7 @@ You don't have anything to do to make them work.
 
 ![image](https://user-images.githubusercontent.com/49253492/181560527-8a00e625-d07b-4370-bb35-4b789040da82.png)
 
-Warning : You may need some external librairies to let OBS Python scripts work properly. Please read the .md file (which is a README file) in each folder where the script is.
+**Warning :** You may need some external librairies to let OBS Python scripts work properly. Please read the .md file (which is a README file) in each folder where the script is.
 
 ### Ressources :
 - Python 3.6.8 : https://www.python.org/downloads/release/python-368/
@@ -51,7 +51,7 @@ Example with "Read Extensions" permission : `https://id.twitch.tv/oauth2/authori
 
 **Documentation :** https://dev.twitch.tv/docs/authentication/scopes
 
-**Finished !** Just copy and paste the Client ID and the Oauth token into the following text fields !
+**Finished !** Just copy and paste the Client ID and the Oauth token into the following text fields of your favorite script !
 ![image](https://user-images.githubusercontent.com/49253492/181570386-597cfaa2-65b4-4834-8ad3-3d1a5956a02d.png)
 
 
