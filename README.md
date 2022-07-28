@@ -1,5 +1,39 @@
 # OBS-scripts
-Some OBS Studio scripts useful to me (Lua &amp; Python).
+**Some OBS Studio scripts useful to me (Lua &amp; Python).**
 You have all the OBS scripts in the /scripts folder of the repository. You may have some additional instructions to these scripts.
 
 Installation to put these scripts in OBS: Tools / Scripts > Select the script you want to import with the + button.
+
+**Lua scripts :**
+You have anything to do to make them work.
+
+**Python scripts :**
+- Download Python 3.6.8 fully supported by the latest OBS Studio (27.2.4) below in the **Ressources** section of this README file. *(updated the 2022-07-28)*
+- At the installation, if you don't want some problems and if you don't know anything about Python, please click on **Customize** and then check **"Install for all users"**, **"Add Python to environment variables"** and **"Precompile standard library"** on the Python Setup.
+- Once installed, you should find your Python Path for the OBS Python Settings into *"C:\Program Files\Python36"*
+
+![image](https://user-images.githubusercontent.com/49253492/181560527-8a00e625-d07b-4370-bb35-4b789040da82.png)
+
+Warning : You may need some external librairies to let OBS Python scripts work properly. Please read the .md file (which is a README file) in each folder where the script is.
+
+**Ressources :**
+Python 3.6.8 : https://www.python.org/downloads/release/python-368/
+
+---
+
+###Make requests to Twitch API
+
+In some scripts of that repository, you may need a Client ID and a Oauth parameter.
+
+####How to get them ?
+
+Well the easiest way to get these parameters are the following instructions :
+- Go to this link : https://dev.twitch.tv/console/apps (accept all the Twitch stuff to let you be a real developer 😎)
+- Click on **Register Your Application**
+![image](https://user-images.githubusercontent.com/49253492/181560828-0f693d78-ffcc-490d-a9a6-e52ef4e677d6.png)
+
+- Then create your application, just put `http://localhost:3000` in the URL Oauth redirection text field.
+![image](https://user-images.githubusercontent.com/49253492/181560916-b1c89865-10fe-408f-a3e4-f739db82757f.png)
+
+
+If you want to go further or you already have your token generator here's the Twitch documentation : https://dev.twitch.tv/docs/api/get-started
