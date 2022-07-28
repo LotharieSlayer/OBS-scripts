@@ -27,7 +27,7 @@ You don't have anything to do to make them work.
 
 # Make requests to Twitch API
 
-In some scripts of that repository, you may need a Client ID and a Oauth parameter.
+In some scripts of that repository, you may need a Client ID and a OAuth parameter.
 
 ### How to get them ?
 
@@ -35,13 +35,13 @@ Well the easiest way to get these parameters are the following instructions :
 - Go to this link : https://dev.twitch.tv/console/apps (accept all the Twitch stuff to let you be a real developer 😎)
 - Click on **Register Your Application**
 ![image](https://user-images.githubusercontent.com/49253492/181560828-0f693d78-ffcc-490d-a9a6-e52ef4e677d6.png)
-- Then create your application, just type `http://localhost:3000` in the URL Oauth redirection text field.
+- Then create your application, just type `http://localhost:3000` in the URL OAuth redirection text field.
 ![image](https://user-images.githubusercontent.com/49253492/181560916-b1c89865-10fe-408f-a3e4-f739db82757f.png)
 - Once created, go to Edit and copy the Client ID code (we don't need the Client Secret code)
-- Then you'll have to create a link to get the Oauth token.
+- Then you'll have to create a link to get the OAuth token.
 ![image](https://user-images.githubusercontent.com/49253492/181565602-eeb6f214-d810-4fc3-906e-e5eeb18947af.png)
 `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id= YOUR CLIENT ID &redirect_uri=http://localhost:3000`
-- And just get the Oauth token here
+- And just get the OAuth token here
 ![image](https://user-images.githubusercontent.com/49253492/181567452-906d1aa0-a58a-4461-9739-f134e684ab16.png)
 `http://localhost:3000/#access_token= YOUR OAUTH TOKEN TO GET &scope=&token_type=bearer`
 
@@ -51,7 +51,7 @@ Example with "Read Extensions" permission : `https://id.twitch.tv/oauth2/authori
 
 **Documentation :** https://dev.twitch.tv/docs/authentication/scopes
 
-**Finished !** Just copy and paste the Client ID and the Oauth token into the following text fields of your favorite script !
+**Finished !** Just copy and paste the Client ID and the OAuth token into the following text fields of your favorite script !
 ![image](https://user-images.githubusercontent.com/49253492/181570386-597cfaa2-65b4-4834-8ad3-3d1a5956a02d.png)
 
 
