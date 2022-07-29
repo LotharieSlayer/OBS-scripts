@@ -1,14 +1,12 @@
 # @author LotharieSlayer (2022)
-# @version 1.0
+# @version 1.0.1
 
 import requests as rq
 import obspython as obs
 
-
 title_source_name = ""
 category_source_name = ""
-interval = 20
-
+interval = 5
 
 def update_text():
 	title_source = obs.obs_get_source_by_name(title_source_name)
@@ -16,12 +14,16 @@ def update_text():
 
 	header = {"Client-ID": client_id, "Authorization": f"Bearer {oauth}"}
 	response = rq.get(f"https://api.twitch.tv/helix/streams?user_login={channel}", headers = header)
-	data = response.json()['data']
-	
-	title = data[0]['title']
-	category = data[0]['game_name']
-	print(title)
-	print(category)
+	try:
+		data = response.json()['data']
+		title = data[0]['title']
+		category = data[0]['game_name']
+	except:
+		title = ""
+		category = "Offline"
+
+	# print(title)
+	# print(category)
 
 	settings = obs.obs_data_create()
 	obs.obs_data_set_string(settings, "text", title)
@@ -48,8 +50,6 @@ def script_update(settings):
 	global category_source_name
 	global interval
 
-	# global data
-
 	interval = obs.obs_data_get_int(settings, "interval")
 	channel = obs.obs_data_get_string(settings, "channel")
 	# channel = "mistermv" # Only for testing when you're not on-live on Twitch
@@ -67,7 +67,7 @@ def script_update(settings):
 
 
 def script_description():
-	return "<b>Stream Info</b>" + \
+	return "<b>StreamInfo</b>" + \
 			"<hr>" + \
 			"Python script to get stream informations." + \
 			"<br/>" + \
@@ -108,10 +108,10 @@ def script_properties():
 
 		obs.source_list_release(sources)
 
-	obs.obs_properties_add_int(props, "interval", "Update Interval (seconds)", 20, 3600, 1)
+	obs.obs_properties_add_int(props, "interval", "Update Interval (seconds)", 5, 3600, 1)
 	obs.obs_properties_add_button(props, "button", "Refresh", refresh_pressed)
 
 	return props
 
 def script_defaults(settings):
-	obs.obs_data_set_default_int(settings, "interval", 20)
+	obs.obs_data_set_default_int(settings, "interval", 5)

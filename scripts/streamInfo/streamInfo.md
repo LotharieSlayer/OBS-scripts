@@ -19,3 +19,6 @@ If you have problem running this Python script, please make sure you carefully f
 
 ### Why is it useful for me ?
 To make a "Up Next" scene that I can integrate into my Pause scene.
+
+### Corrections :
+v1.0.1 : Log error fix
