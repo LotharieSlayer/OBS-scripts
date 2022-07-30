@@ -1,12 +1,16 @@
 # @author LotharieSlayer (2022)
-# @version 1.0.1
+# @version 1.0.2
 
 import requests as rq
 import obspython as obs
 
+# Threading avoid frame dropping (instead of obs_time_add) when fetching stream info
+from threading import Timer
+
 title_source_name = ""
 category_source_name = ""
-interval = 5
+interval = 1
+refresh_button = False
 
 def update_text():
 	title_source = obs.obs_get_source_by_name(title_source_name)
@@ -15,15 +19,14 @@ def update_text():
 	header = {"Client-ID": client_id, "Authorization": f"Bearer {oauth}"}
 	response = rq.get(f"https://api.twitch.tv/helix/streams?user_login={channel}", headers = header)
 	try:
+		# Refresh
 		data = response.json()['data']
 		title = data[0]['title']
 		category = data[0]['game_name']
 	except:
+		# Refresh but offline stream
 		title = ""
 		category = "Offline"
-
-	# print(title)
-	# print(category)
 
 	settings = obs.obs_data_create()
 	obs.obs_data_set_string(settings, "text", title)
@@ -32,8 +35,19 @@ def update_text():
 	obs.obs_source_update(category_source, settings)
 	obs.obs_data_release(settings)
 
+	global refresh_button
+	if refresh_button:
+		# If refresh button pressed, update and return to not start a new thread
+		refresh_button = False
+		return
+	
+	# Start the thread (again)
+	Timer(interval, update_text).start()
+
 		
 def refresh_pressed(props, prop):
+	global refresh_button
+	refresh_button = True
 	update_text()
 
 
@@ -49,9 +63,10 @@ def script_update(settings):
 	global title_source_name
 	global category_source_name
 	global interval
+	global refresh_button
 
 	interval = obs.obs_data_get_int(settings, "interval")
-	channel = obs.obs_data_get_string(settings, "channel")
+	channel = obs.obs_data_get_string(settings, "channel_name")
 	# channel = "mistermv" # Only for testing when you're not on-live on Twitch
 
 	client_id = obs.obs_data_get_string(settings, "client_id")
@@ -62,7 +77,8 @@ def script_update(settings):
 	#print("Settings JSON", obs.obs_data_get_json(settings))
 	
 	if client_id != "" and oauth != "" and title_source_name != "" and category_source_name != "":
-		obs.timer_add(update_text, interval * 1000)
+		Timer(interval, update_text).start()
+		# obs.timer_add(update_text, interval * 1000) # More natural but drop frames ~20 frames/interval :(
 
 
 
@@ -83,7 +99,7 @@ def script_properties():
 	props = obs.obs_properties_create()
 
 	obs.obs_properties_add_text(props, "channel_name", "Channel", obs.OBS_TEXT_DEFAULT)
-	obs.obs_properties_add_text(props, "client_id", "Client ID", obs.OBS_TEXT_DEFAULT)
+	obs.obs_properties_add_text(props, "client_id", "Client ID", obs.OBS_TEXT_PASSWORD)
 	obs.obs_properties_add_text(props, "oauth", "Oauth", obs.OBS_TEXT_PASSWORD)
 
 	p = obs.obs_properties_add_list(props, "title_source", "Title Source", obs.OBS_COMBO_TYPE_EDITABLE, obs.OBS_COMBO_FORMAT_STRING)
@@ -108,7 +124,7 @@ def script_properties():
 
 		obs.source_list_release(sources)
 
-	obs.obs_properties_add_int(props, "interval", "Update Interval (seconds)", 5, 3600, 1)
+	obs.obs_properties_add_int(props, "interval", "Update Interval (seconds)", 1, 3600, 1)
 	obs.obs_properties_add_button(props, "button", "Refresh", refresh_pressed)
 
 	return props
