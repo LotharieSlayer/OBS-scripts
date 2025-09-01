@@ -11,7 +11,7 @@ You don't have anything to do to make them work.
 - Download Python 3.6.8, the only Python fully supported by the latest OBS Studio 27 (v27.2.4) below. *(updated 2025-09-01)*
   - https://github.com/obsproject/obs-studio/releases/tag/27.2.4
   - https://www.python.org/downloads/release/python-368/
-  - https://pypi.org/project/requests/2.27.1/ (needed for few plugins that requires requests, 2.27.1 is the last Python 3.6.x compatible)
+  - https://pypi.org/project/requests/2.27.1/ (needed for few scripts that requires requests, 2.27.1 is the last Python 3.6.x compatible)
 - At the installation, if you don't want some problems and if you don't know anything about Python, please click on **Customize** and then check **"Install for all users"**, **"Add Python to environment variables"** and **"Precompile standard library"** on the Python Setup.
 - Once installed, you should find your Python Path for the OBS Python Settings into `C:\Program Files\Python36` or `C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python36`
 
