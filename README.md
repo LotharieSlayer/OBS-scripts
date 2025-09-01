@@ -7,7 +7,7 @@ Installation to put these scripts in OBS: Tools / Scripts > Select the script yo
 > [!WARNING]
 > This repository and all the scripts inside are designed and only work with OBS Studio v27!! (or below v27 at your own risks.)
 >
-> Please read carefully this README to understand why.
+> Please read carefully this README to understand why I keep v27.
 
 ### Lua scripts :
 You don't have anything to do to make them work.
