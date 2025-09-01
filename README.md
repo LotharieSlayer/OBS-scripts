@@ -10,7 +10,7 @@ Installation to put these scripts in OBS: Tools / Scripts > Select the script yo
 > Please read carefully this README to understand why I keep v27.
 
 ### Lua scripts :
-You don't have anything to do to make them work.
+You don't have anything to do to make them work. OBS can launch any Lua script out-of-the-box.
 
 ### Python scripts :
 - Download Python 3.6.8, the only Python fully supported by the latest OBS Studio 27 (v27.2.4). *(updated 2025-09-01)*
