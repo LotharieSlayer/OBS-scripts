@@ -21,5 +21,5 @@ If you have problem running this Python script, please make sure you carefully f
 To make a "Up Next" scene that I can integrate into my Pause scene.
 
 ### Corrections :
-v1.0.1 : Log error fix
-v1.0.2 : Frame Dropping fix (threading)
+- v1.0.1 : Log error fix
+- v1.0.2 : Frame Dropping fix (threading)
