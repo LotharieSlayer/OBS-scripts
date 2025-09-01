@@ -5,9 +5,11 @@ You have all the OBS scripts in the /scripts folder of the repository. You may h
 Installation to put these scripts in OBS: Tools / Scripts > Select the script you want to import with the + button.
 
 > [!WARNING]
+> ### OBS STUDIO v27.x ONLY!!
+> 
 > This repository and all the scripts inside are designed and only work with OBS Studio v27!! (or below v27 at your own risks.)
 >
-> Please read carefully this README to understand why I keep v27.
+> Please read carefully this README to understand why I keep v27 and still not switching to v28+.
 
 ### Lua scripts :
 You don't have anything to do to make them work. OBS can launch any Lua script out-of-the-box.
@@ -24,11 +26,7 @@ You don't have anything to do to make them work. OBS can launch any Lua script o
 
 **Warning :** You may need some external librairies to let OBS Python scripts work properly. Please read the .md file (which is a README file) in each folder where the script is.
 
-<br/>
-
 ---
-
-<br/>
 
 ## Why are you still using OBS v27 ?
 Well I need [StreamFX](https://github.com/Vhonowslend/StreamFX-Public) for my personnal layouts, pretty popular few years ago... and now it has been stopped by its maintainer i'm stuck here! :P
