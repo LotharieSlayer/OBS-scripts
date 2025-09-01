@@ -8,16 +8,16 @@ Installation to put these scripts in OBS: Tools / Scripts > Select the script yo
 You don't have anything to do to make them work.
 
 ### Python scripts :
-- Download Python 3.6.8 fully supported by the latest OBS Studio (27.2.4) below in the **Ressources** section of this README file. *(updated the 2022-07-28)*
+- Download Python 3.6.8, the only Python fully supported by the latest OBS Studio 27 (v27.2.4) below. *(updated 2025-09-01)*
+  - https://github.com/obsproject/obs-studio/releases/tag/27.2.4
+  - https://www.python.org/downloads/release/python-368/
+  - https://pypi.org/project/requests/2.27.1/ (needed for few plugins that requires requests, 2.27.1 is the last Python 3.6.x compatible)
 - At the installation, if you don't want some problems and if you don't know anything about Python, please click on **Customize** and then check **"Install for all users"**, **"Add Python to environment variables"** and **"Precompile standard library"** on the Python Setup.
-- Once installed, you should find your Python Path for the OBS Python Settings into *"C:\Program Files\Python36"*
+- Once installed, you should find your Python Path for the OBS Python Settings into `C:\Program Files\Python36` or `C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python36`
 
 ![image](https://user-images.githubusercontent.com/49253492/181560527-8a00e625-d07b-4370-bb35-4b789040da82.png)
 
 **Warning :** You may need some external librairies to let OBS Python scripts work properly. Please read the .md file (which is a README file) in each folder where the script is.
-
-### Ressources :
-- Python 3.6.8 : https://www.python.org/downloads/release/python-368/
 
 <br/>
 
@@ -25,9 +25,11 @@ You don't have anything to do to make them work.
 
 <br/>
 
-# Make requests to Twitch API
+## Why are you still using OBS v27 ?
+Well I need [StreamFX](https://github.com/Vhonowslend/StreamFX-Public) for my personnal layouts, pretty popular few years ago... and now it has been stopped by its maintainer i'm stuck here! :P
 
-In some scripts of that repository, you may need a Client ID and a OAuth parameter.
+## Make requests to Twitch API
+In some scripts of that repository, you may need a Client ID and a OAuth parameter. (make sure you have [requests](https://pypi.org/project/requests/2.27.1/) installed)
 
 ### How to get them ?
 
@@ -53,7 +55,6 @@ Example with "Read Extensions" permission : `https://id.twitch.tv/oauth2/authori
 
 **Finished !** Just copy and paste the Client ID and the OAuth token into the following text fields of your favorite script !
 ![image](https://user-images.githubusercontent.com/49253492/181570386-597cfaa2-65b4-4834-8ad3-3d1a5956a02d.png)
-
 
 
 If you want to go further or you already have your token generator here's the Twitch documentation : https://dev.twitch.tv/docs/api/get-started
