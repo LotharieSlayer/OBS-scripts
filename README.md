@@ -1,14 +1,19 @@
-# OBS-scripts
+# OBS Scripts
 **Some OBS Studio scripts useful to me (Lua &amp; Python).**
 You have all the OBS scripts in the /scripts folder of the repository. You may have some additional instructions to these scripts.
 
 Installation to put these scripts in OBS: Tools / Scripts > Select the script you want to import with the + button.
 
+> [!WARNING]
+> This repository and all the scripts inside are designed and only work with OBS Studio v27!! (or below v27 at your own risks.)
+>
+> Please read carefully this README to understand why.
+
 ### Lua scripts :
 You don't have anything to do to make them work.
 
 ### Python scripts :
-- Download Python 3.6.8, the only Python fully supported by the latest OBS Studio 27 (v27.2.4) below. *(updated 2025-09-01)*
+- Download Python 3.6.8, the only Python fully supported by the latest OBS Studio 27 (v27.2.4). *(updated 2025-09-01)*
   - https://github.com/obsproject/obs-studio/releases/tag/27.2.4
   - https://www.python.org/downloads/release/python-368/
   - https://pypi.org/project/requests/2.27.1/ (needed for few scripts that requires requests, 2.27.1 is the last Python 3.6.x compatible)
